@@ -1,18 +1,18 @@
 class Stack
-    attr_accessor :pile
+    attr_accessor :stack
     def initialize
-        @pile = []
+        @stack = []
     end
     
     def push(el)
-        pile.push(el)
+        stack.push(el)
     end
 
     def pop
-        pile.pop
+        stack.pop
     end
 
     def peek
-        pile.last
+        stack.last
     end
 end
