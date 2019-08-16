@@ -14,9 +14,13 @@ class Map
     end
 
     def delete(key)
+        map.each_with_index do |pair, idx| 
+            return map.delete_at(idx) if pair[0] == key
+        end
     end
 
     def show
+        mirror = map.map { |pair| pair }
     end
 
     def keys
