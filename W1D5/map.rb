@@ -9,6 +9,8 @@ class Map
     end
 
     def get(key)
+        map.each { |pair| return pair[1] if pair[0] == key }
+        nil
     end
 
     def delete(key)
