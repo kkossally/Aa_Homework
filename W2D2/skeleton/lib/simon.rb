@@ -30,7 +30,7 @@ class Simon
     system "clear"
     add_random_color
     seq.each do |color|
-      puts color.upcase
+      puts color.capitalize
       sleep(1)
       system "clear"
     end
