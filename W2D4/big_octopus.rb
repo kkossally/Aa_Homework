@@ -1,6 +1,6 @@
 require 'byebug'
 
-fish = [ 1, 2, 3, 4, 5 ]
+fishes = [ 'fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish', 'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh' ]
 
 def sluggish_octopus(arr)
     longest_fish = arr.first
@@ -14,39 +14,39 @@ def sluggish_octopus(arr)
     longest_fish
 end
 
-puts sluggish_octopus(fish) # => "fiiiissshhhhhh"
+puts sluggish_octopus(fishes) # => "fiiiissshhhhhh"
 
 
 
 def dominant_octopus(arr)
-    return arr if arr.count < 2
+    dominant_octopus_helper(arr).last
+end
+
+def dominant_octopus_helper(arr)
+    return arr if arr.count <= 1
 
     mid_idx = arr.length / 2
     
-    left = arr[0...mid_idx]
-    right = arr[mid_idx..-1]
+    left = arr.take(mid_idx)
+    right = arr.drop(mid_idx)
     
     sorted_left = dominant_octopus(left)
     sorted_right = dominant_octopus(right)
-    sorted = dominant_octopus_helper(sorted_left, sorted_right)
-    
-    sorted.last
-end
 
-def dominant_octopus_helper(left, right)
     sorted = []
     
     until left.empty? || right.empty?
-        if left.first <= right.first
+        if left.first.length <= right.first.length
             sorted << left.shift
         else
             sorted << right.shift
         end
     end
-    sorted += left + right
+
+    sorted + left + right
 end
 
-puts dominant_octopus(fish) # => "fiiiissshhhhhh"
+puts dominant_octopus(fishes) # => "fiiiissshhhhhh"
 
 
 
@@ -58,8 +58,7 @@ def clever_octopus(arr)
     longest_fish
 end
 
-puts clever_octopus(fish) # => "fiiiissshhhhhh"
-
+puts clever_octopus(fishes) # => "fiiiissshhhhhh"
 
 
 
