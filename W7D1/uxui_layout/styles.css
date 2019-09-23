@@ -1,0 +1,46 @@
+body, header, div, span, p, footer, ul, li, a, img {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  list-style: none;
+
+  background: transparent;
+}
+
+header {
+  background-color: lightgoldenrodyellow;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100px;
+}
+
+header .links {
+  background-color: lightsalmon;
+
+  display: flex;
+}
+
+.banner {
+  background-color: lightgreen;
+}
+
+.banner-main {
+  background-color: lightblue;
+}
+
+.banner-ribbon {
+  background-color: lightseagreen;
+}
+
+footer {
+  background-color: pink;
+}
